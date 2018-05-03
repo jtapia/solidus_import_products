@@ -1,6 +1,9 @@
 module SolidusImportProducts
   module Generators
     class InstallGenerator < Rails::Generators::Base
+      class_option :auto_run_migrations, type: :boolean, default: false
+      class_option :auto_skip_migrations, type: :boolean, default: false
+
       def self.source_paths
         paths = superclass.source_paths
         paths << File.expand_path('../templates', "../../#{__FILE__}")
@@ -10,7 +13,12 @@ module SolidusImportProducts
       end
 
       def add_migrations
-        run 'bundle exec rake railties:install:migrations FROM=solidus_import_products'
+        if !options[:auto_skip_migrations]
+          run 'bundle exec rake solidus_import_products:install:migrations'
+        else
+          puts 'Skipping rake solidus_import_products:install:migrations, don\'t forget to run it!'
+        end
+
       end
 
       def add_files
@@ -18,11 +26,14 @@ module SolidusImportProducts
       end
 
       def run_migrations
-        res = ask 'Would you like to run the migrations now? [Y/n]'
-        if res == '' || res.casecmp('y').zero?
+        run_migrations =  options[:auto_skip_migrations] ||
+                          options[:auto_run_migrations] ||
+                          ['', 'y', 'Y'].include?(ask('Would you like to run the migrations now? [Y/n]'))
+
+        if run_migrations && !options[:auto_skip_migrations]
           run 'bundle exec rake db:migrate'
         else
-          puts "Skiping rake db:migrate, don't forget to run it!"
+          puts 'Skipping rake db:migrate, don\'t forget to run it!'
         end
       end
     end
