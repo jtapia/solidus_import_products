@@ -1,13 +1,14 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'solidus_import_products'
-  s.version     = '2.0.0'
+  s.version     = '2.0.1'
   s.summary     = "solidus_import_products ... imports products. From a CSV file via Solidus's Admin interface"
   s.required_ruby_version = '>= 2.2.2'
 
   s.author            = 'ngelX'
   s.email             = 'ngelx@protonmail.com'
   s.homepage          = 'https://github.com/ngelx/solidus_import_products'
+  s.license           = 'MIT'
 
   s.files        = Dir['CHANGELOG', 'README.md', 'LICENSE', 'lib/**/*', 'app/**/*']
   s.require_path = 'lib'
