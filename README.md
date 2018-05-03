@@ -1,4 +1,7 @@
+[![Gem Version](https://badge.fury.io/rb/solidus_import_products.svg)](https://badge.fury.io/rb/solidus_import_products)
+[![Build Status](https://travis-ci.org/ngelx/solidus_import_products.svg?branch=master)](https://travis-ci.org/ngelx/solidus_import_products) 
 [![Maintainability](https://api.codeclimate.com/v1/badges/132ebaa254502b25d886/maintainability)](https://codeclimate.com/github/ngelx/solidus_import_products/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/132ebaa254502b25d886/test_coverage)](https://codeclimate.com/github/ngelx/solidus_import_products/test_coverage)
+[![Dependency Status](https://beta.gemnasium.com/badges/github.com/ngelx/solidus_import_products.svg)](https://beta.gemnasium.com/projects/github.com/ngelx/solidus_import_products)
 
 This extension adds product import functionality to Solidus, with a bunch of features that give it similar functionality to Shopify's importer.
 
