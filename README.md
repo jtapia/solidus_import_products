@@ -1,3 +1,4 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/132ebaa254502b25d886/maintainability)](https://codeclimate.com/github/ngelx/solidus_import_products/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/132ebaa254502b25d886/test_coverage)](https://codeclimate.com/github/ngelx/solidus_import_products/test_coverage)
 
 This extension adds product import functionality to Solidus, with a bunch of features that give it similar functionality to Shopify's importer.
 
